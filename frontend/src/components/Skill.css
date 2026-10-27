@@ -1,0 +1,49 @@
+.sk {
+    --perce: 50%;
+    /* height: 100px; */
+    width: 100%;
+    max-width: 300px;
+    background-color: paleturquoise;
+    display: grid; 
+    grid-template-columns: 1fr 2fr;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between; */
+}
+.sname {
+    padding-left: 20px;
+    /* padding-block-start: 20px; */
+}
+
+.progbar {
+    /* position: relative; */
+    stroke:red;
+    stroke-width:20;
+    color: whitesmoke;
+    border-radius: 10px 10px 10px 10px;
+}
+.sbar {
+    /* position: absolute; */
+    overflow: hidden;
+    top: 0;
+    z-index: 0;
+    color: white;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(174, 190, 211);
+    border-radius: 2rem;
+}
+.sfill {
+    /* width: var(--perce); */
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    background-color: rgb(127, 211, 0);
+}
+.sval {
+    padding-left: 1rem;
+    z-index: 10;
+    color: white;
+}

@@ -1,0 +1,65 @@
+button {
+    padding: 0.5rem;
+    border-radius: 10px;
+    background-color: yellow;
+    color: rgb(182, 0, 0);
+    font-weight: bold;
+    font-size: large;
+    border: none;
+}
+
+.uprof {
+     min-width: 100px;
+    background-color: rgb(255, 245, 245);
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex; 
+    flex-direction: column;
+
+    /* align-items: center; */
+    gap: 10px;
+}
+
+.udetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+    /* background-color: white; */
+}
+
+.utarg{
+    padding: 10px;
+    min-width: 200px;
+    /* max-width: 500px; */
+    /* width: 100%; */
+    width:  calc(min(50%, 400px));
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+
+    /* filter: invert(77%) sepia(91%) saturate(1823%) hue-rotate(199deg) brightness(107%) contrast(98%); */
+    filter: invert(98%);
+    border-radius: 1rem;
+}
+
+.fimg {   
+    border-radius: 50%;
+    box-shadow: 3px 3px 3px 3px black;
+}
+.header {
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    font-family:cursive;
+    /* margin-top: 1rem; */
+    margin: 1rem 0.5rem;
+}
+
+.skm {
+    text-align: center;
+    /* align-items: center; */
+}
+
+

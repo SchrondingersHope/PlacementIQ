@@ -1,0 +1,1 @@
+export let skillzList = ["c++", "java", "python"];
