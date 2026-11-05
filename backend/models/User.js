@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 const userSchema = new mongoose.Schema({
     dpPath: {
         type: String,
-        default: "",
+        default: 'public/assets/images/user-solid-full.svg',
     },
     userName: {
         type: String,

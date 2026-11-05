@@ -1,0 +1,30 @@
+h1 {
+            color: red
+        }
+        /* .titl {
+            display: flex;
+        } */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        form {
+            /* display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 16px; */
+        }
+        .Langs {
+            display: flex;
+            flex-direction: column;
+        }
+        .ip {
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 16px;
+            padding: 5px;
+        }

@@ -1,13 +1,19 @@
 import './Companies.css';
 import ComThmnail from "../components/comThmnail";
 import viteImg from "../assets/vite.svg";
+import { useNavigate } from "react-router-dom";
 
 // todos:
 // [] searchbar 
 // [] sort
 // optional: [] filter
+// function handleClick(){
+
+//     navigate(`/company/1`, { replace: true }); 
+// }
 
 export default function Companies({companiesArr}){
+
     return(
         <div className="comies">
             <div className='heading'>Companies Page!!</div>
@@ -27,9 +33,9 @@ export default function Companies({companiesArr}){
                     })
                 } */}
                 
-                <ComThmnail imgSrc={viteImg} name="ABC" matchScore={70} coreIntPt="This is the coreIntPt" targ={true} fav={ true} />
-                <ComThmnail imgSrc={viteImg} name="ABC" matchScore={70} coreIntPt="This is the coreIntPt" targ={false} fav={ false} />
-                <ComThmnail imgSrc={viteImg} name="ABC" matchScore={70} coreIntPt="This is the coreIntPt" targ={false} fav={ false} />
+                <ComThmnail imgSrc={viteImg} name="ABCDEFGHIJKLMNOPIJJGHJJFGFBFBFBF" matchScore={70} coreIntPt="This is the coreIntPt" targ={true} fav={ true} id={3}/>
+                <ComThmnail imgSrc={viteImg} name="ABC" matchScore={70} coreIntPt="This is the coreIntPt" targ={false} fav={ false} id={1}/>
+                <ComThmnail imgSrc={viteImg} name="ABC" matchScore={70} coreIntPt="This is the coreIntPt" targ={false} fav={ false} id={2}/>
             </div> 
         </div>
     );

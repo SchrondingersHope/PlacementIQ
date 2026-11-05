@@ -76,7 +76,7 @@ app.post("/company/register", uploadCompany, addCompany);
 
 /* ROUTES */
 app.use("/auth", authRoutes);
-app.use("/users", userRoutes);
+app.use("/user", userRoutes);
 app.use("/company", companyRoutes);
 app.use("/reviews", reviewRoutes);
 

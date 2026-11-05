@@ -181,7 +181,7 @@ export default function Company(){
                     </div>
                     <div className="showcase">
                             {companyRevs.map((v,i)=>(
-                                <Review review={v}/>
+                                <Review review={v} key={i}/>
                             ))}
                     </div>
                 </div>

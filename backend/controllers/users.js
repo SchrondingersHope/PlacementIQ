@@ -36,15 +36,89 @@ export async function getUserFavs(req, res){
         const { id } = req.params;
         const user = await User.findById(id);
 
-        const favs = await Promise.all(
-            user.favCompanies.map((id) => Company.findById(id))
-        );
-        const formattedFavs = favs.map(
-            ({ _id, name, dpPath}) =>{
-                return { _id, name, dpPath};
+        // later: first combine
+        // const favvs = await UCMatch.aggregate([
+        //     {
+        //         $match: {
+        //             studentID: id,
+        //             companyID: {$in: user.favCompanies}
+        //         }
+        //     },
+        //     {
+        //         $sort: {matchScore: -1}
+        //     },
+        //     {  
+        //         $set: {
+        //             companyId: { $toObjectId: "$companyID" }
+        //         }
+        //     },
+        //     {   $lookup:{
+        //             from: "companies",
+        //             localField: "companyId",
+        //             foreignField:  "_id",
+        //             as: "company"
+        //         }
+        //     }
+        // ])
+
+        const favvies = await Company.aggregate([
+            {
+                $set: {
+                    idd: {$toString: "$_id"}
+                }
+            },
+            {
+                $match: {
+                    idd: {$in: user.favCompanies}
+                }
+            },
+            {   $lookup:{
+                    from: "ucmatches",
+                    localField: "idd",
+                    foreignField:  "companyID",
+                    pipeline:[
+                        {
+                            $match: {
+                                studentID: id,
+                            },
+                        },
+                        {
+                            $sort: {matchScore: -1}
+                        },
+                        {$limit: 1},
+                        {
+                            $project: {
+                                // 0 means exclude, 1 means include
+                                _id: 0,
+                                companyID: 0,
+                                studentID: 0,
+                                __v: 0,
+                            }
+                        }
+                    ],
+                    
+                    as: "match"
+                }
             }
-        );
-        res.status(200).json(formattedFavs);
+        ])
+
+
+        // const favs = await Promise.all(
+        //     user.favCompanies.map((v,i) => {
+        //         Company.findById(v);
+        //         // const targMatches = await UCMatch.find({studentID: id, companyID: i}).sort({matchScore: -1}).limit(-1);
+        //     })      
+        // );
+
+        // const fff = await Company.findById(user.favCompanies[0]);
+
+
+        // const formattedFavs = favs.map(
+        //     ({ _id, name, dpPath}) =>{
+        //         return { _id, name, dpPath};
+        //     }
+        // );
+        res.status(200).json(favvies);
     } catch(err){
         res.status(404).json({msg: err.message});
     }

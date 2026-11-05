@@ -14,6 +14,10 @@
     margin-bottom: 10px;
     /* gap: 10px; */
     /* background-color: white; */
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .ctheader {
@@ -24,6 +28,11 @@
     font-weight: bold;
     font-size: large;
     color:darkblue;
+    width: 300px;
+    /* word-wrap:break-word; */
+    text-wrap-mode: wrap;
+    /* overflow-wrap:anywhere; */
+    
     /* gap: 10px; */
     /* padding: 10px; */
 
@@ -31,6 +40,12 @@
 .cinfo {
     display: flex;
     gap: 10px;
+    overflow: hidden;
+}
+
+.uchoice {
+    display: flex;
+    flex-direction: column;
 }
 
 .unsel {

@@ -16,13 +16,12 @@ export default function Role({role, skillzList}){
     console.log(skillPerc, reqPerc);
     
     return(
-        <div className="sk">
+        <div className="skb">
             <div className="rname">{role.roleName}</div>
             <div className="rdesc">{role.roleDesc}</div>
 
-
             {role.req.map((v,i)=>(
-                <div className="skb" key={i}>
+                <div className="sk" key={i}>
                     <div className="sname">{skillzList[i]}</div>
                     <div className="progbar">
                         <div className="sbar">

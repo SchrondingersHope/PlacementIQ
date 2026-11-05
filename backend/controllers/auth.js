@@ -75,8 +75,10 @@ export async function login(req,res) {
     try{
         console.log(req.body);
         const { email, password } = req.body;
-        const user = await User.findOne({email});
+        // console.log(email,password);
+        const user = await User.findOne({email: email}).lean();
 
+        // console.log(user);
         if(!user) return res.status(400).json({msg: "User not found."});
 
         const isMatch = await bcrypt.compare(password, user.password);
@@ -86,7 +88,8 @@ export async function login(req,res) {
 
         // deleting only in the var user, not the db lol
         delete user.password;
-        console.log(token);
+
+        console.log(token, user);
         res.status(200).json({token, user});
 
 
